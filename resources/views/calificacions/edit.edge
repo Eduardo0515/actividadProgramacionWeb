@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>calificaciones</title> 
+  {{ style('materialize.min.css') }}
+</head>
+<body bgcolor="lightseagreen">
+    <nav class="light-blue teal lightseagreen" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" class="brand-logo">Asignar calificación</a>
+        </div>
+    </nav>
+   <div style="margin-left:20px">
+        <br>
+        <br>
+        <form action="/calificacions/editar/{{calificacion.id}}" method="post">
+            <label style="color:black" >Nombre del alumno</label><br>
+            <input disabled="true" style="border-radius:10px;width:210px; border-color:blue;"type="text"
+                name="" value="{{alumno.nombre}}"/><br>
+            <label disabled="true" style="color:black">Nombre del materia</label><br>
+            <input disabled="true" style="border-radius:10px;width:210px; border-color:blue;"type="text"
+                name="" value="{{materia.nombre}}"/><br>        
+            <label style="color:black">Id de Registro</label><br>
+            <input disabled="true" style="border-radius:10px;width:210px; border-color:blue;"type="text"
+                name="idRegistro" value="{{registro.id}}"/><br>           
+            <label style="color:black">Calificacion</label><br>
+            <input style="border-radius:10px;width:210px; border-color:blue;"type="text"
+                name="calificacion" value="{{calificacion.calificacion}}"/><br>    
+            <input style="background-color:;color:blue;border-radius:3px;margin-left:6%" type="submit" value="Aceptar"/>      
+        </form>      
+    </div >  
+</body>
+</html>

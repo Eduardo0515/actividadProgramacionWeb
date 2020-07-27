@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Materias</title>
+  {{ style('materialize.min.css') }}
+</head>
+<body bgcolor="lightseagreen">
+    <nav class="light-blue teal lightseagreen" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" class="brand-logo">Materias</a>
+        </div>
+    </nav>
+    <br><br>
+<a class="btn-floating btn-large waves-effect waves-light #0091ea #ffa726 #ff5722 deep-orange" style="color:white"  href="/materias/crear">Crear</a>
+<br>
+<br>
+    <div >
+        <table border=2>
+            <tr>
+                <th style="background-color:gray; color:white">Id</th>  
+                <th style="background-color:gray; color:white">Nombre</th>
+                <th style="background-color:gray; color:white">Plan</th>
+                <th style="background-color:gray; color:white">Descripcion</th>
+                <th style="background-color:gray; color:white"></th>
+                <th style="background-color:gray; color:white"></th>
+                <th style="background-color:gray; color:white"></th>
+            </tr>
+            @each(materia in materias)
+                <tr>
+                    <td style="color:white">{{materia.id}}</td>
+                    <td style="color:white">{{materia.nombre}}</td>
+                    <td style="color:white">{{materia.plan}}</td>
+                    <td style="color:white">{{materia.descripcion}}</td>
+                    <td ><a style="color:white"  href="/materias/editar/{{materia.id}}">Editar</a></td>
+                    <td><a style="color:white"  href="/materias/eliminar/{{materia.id}}">Eliminar</a></td>
+                    <td><a style="color:white"  href="/materias/ver/{{materia.id}}">Ver</a></td>
+                </tr>
+            @endeach    
+        </table>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+    <div style="margin-left:82%">
+        <a class="waves-effect waves-light btn" href="/"><h6 class="white-text">Regresar al inicio</h6></a>
+    </div>
+</body>
+</html>

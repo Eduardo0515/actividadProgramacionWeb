@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registrar</title>
+ {{style('materialize.min.css')}}
+</head>
+<body bgcolor="lightseagreen">
+    <nav class="light-blue teal lightseagreen" role="navigation">
+            <div class="nav-wrapper container"><a id="logo-container"  class="brand-logo">Visualizacion de datos</a>
+            </div>
+        </nav>
+        <br><br>
+    <div style="margin-left:20px">
+        <form action="/registros/volver">
+            <label style="color:black" >Nombre del Alumno</label><br>
+                <input style="border-radius:10px;width:210px; border-color:blue;"type="text"
+                    name="nombre" value="{{alumno.nombre}}"/><br>
+            <label style="color:black" >Nombre de la Materia</label><br>
+                <input style="border-radius:10px;width:210px; border-color:blue;"type="text"
+                    name="nombre" value="{{materia.nombre}}"/><br>
+            <input style="background-color:;color:blue;border-radius:3px;margin-left:6%" type="submit" value="Volver">
+        </form>
+    </div>
+</body>
+</html>

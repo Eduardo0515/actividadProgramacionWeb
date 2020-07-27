@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crear</title> 
+  {{ style('materialize.min.css') }}
+</head>
+<body bgcolor="lightseagreen">
+    <nav class="light-blue teal lightseagreen" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" class="brand-logo">Crear materia</a>
+        </div>
+    </nav>
+   <div style="margin-left:20px">
+        <br>
+        <br>
+        <form action="/materias/crear" method="post">
+            <label style="color:white" >Nombre</label><br>
+            <input style="border-radius:10px;width:210px; border-color:blue;"type="text"
+                name="nombre" /><br>
+            <label style="color:white">Plan</label><br>
+            <input style="border-radius:10px;width:210px; border-color:blue;"type="text"
+                name="plan"/><br>           
+            <label style="color:white">Descripcion</label><br>
+            <input style="border-radius:10px;width:210px; border-color:blue;"type="text"
+                name="descripcion"/><br>    
+            <input style="background-color:;color:blue;border-radius:3px;margin-left:6%" type="submit" value="Crear"/>      
+        </form>      
+    </div >  
+</body>
+</html>

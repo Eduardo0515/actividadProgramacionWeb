@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  {{style('materialize.min.css')}}
+</head>
+<body bgcolor="lightseagreen" >
+    <nav class="light-blue teal lightseagreen" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" class="brand-logo">Calificaciones</a>
+        </div>
+    </nav>
+    <br><br><br>
+    <br>
+        <div >
+            <table border=2 id="table">
+                <tr>
+                    <th style="background-color:gray">Id de Alumno</th>  
+                    <th style="background-color:gray">Id de Materia</th>
+                    <th style="background-color:gray">Nombre Alumno</th>  
+                    <th style="background-color:gray">Nombre Materia</th>
+                    <th style="background-color:gray">Calificacion</th>
+                    <th style="background-color:gray"></th>
+                </tr>
+                @each(calificacion in calificacions)
+                    <tr>
+                        <td style="color:white">{{calificacion.registro.idAlumno}}</td>
+                        <td style="color:white">{{calificacion.registro.idMateria}}</td>
+                        <td style="color:white">{{calificacion.registro.alumno.nombre}}</td>
+                        <td style="color:white">{{calificacion.registro.materia.nombre}}</td>
+                        <td style="color:white">{{calificacion.calificacion}}</td>                     
+                        <td><a style="color:white" href="/calificacions/editar/{{calificacion.id}}">Asignar calificación</a></td>      
+                    </tr>
+                @endeach   
+            </table>
+        </div>
+        <br><br><br><br><br><br><br><br><br>
+    <div style="margin-left:82%">
+        <a class="waves-effect waves-light btn" href="/"><h6 class="white-text">Regresar al inicio</h6></a>
+    </div>
+</body>
+
+</html>

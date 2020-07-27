@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title></title> 
+  {{ style('materialize.min.css') }}
+</head>
+<body bgcolor="lightseagreen">
+    <nav class="light-blue teal lightseagreen" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" class="brand-logo">Editar alumno</a>
+        </div>
+    </nav>
+   <div style="margin-left:20px">
+    
+        <br>
+        <br>
+
+        <form action="/alumnos/editar/{{alumno.id}}" method="post">
+            <label style="color:black">Nombre</label><br>
+            <input style="border-radius:10px;width:210px; border-color:blue;"type="text"
+                name="nombre" value="{{alumno.nombre}}"/><br>
+            <label style="color:black">Apellido</label><br>
+            <input style="border-radius:10px; width:210px; border-color:blue" type="text"
+                name="apellido"/ value="{{alumno.apellido}}"><br>
+            <label style="color:black">Fecha de nacimiento </label><br>
+            <input style="border-radius:10px; width:210px; border-color:blue" type="text"
+                name="nacimiento" value="{{alumno.nacimiento}}"/><br>
+            <label style="color:black">Domicilio </label><br>
+            <input style="border-radius:10px; width:210px; border-color:blue" type="text"
+                name="domicilio" value="{{alumno.domicilio}}"/><br>
+            <label style="color:black">Email </label>    <br>
+            <input style="border-radius:10px; width:210px; border-color:blue" type="text"
+                name="email" value="{{alumno.email}}"/><br>
+            <label style="color:black">Carrera </label>   <br> 
+            <input style="border-radius:10px; width:210px; border-color:blue" type="text"
+                name="carrera" value="{{alumno.carrera}}"/><br>
+            <label style="color:black">Matricula </label>  <br>  
+            <input style="border-radius:10px; width:208px; border-color:blue" type="number"
+                name="matricula" value="{{alumno.matricula}}"/><br>   
+                <label style="color:black">Teléfono </label>  <br>  
+            <input style="border-radius:10px; width:208px; border-color:blue" type="number"
+                name="telefono" value="{{alumno.telefono}}"/> <br>  
+            <label style="color:black">Tipo de Sangre </label>  <br>  
+            <input style="border-radius:10px; width:208px; border-color:blue" type="text"
+                name="tipoSangre" value="{{alumno.tipoSangre}}"/> <br>    
+            <input style="background-color:;color:blue;border-radius:3px;margin-left:6%" type="submit" value="Editar"/>      
+        </form>
+        
+    </div >  
+</body>
+</html>

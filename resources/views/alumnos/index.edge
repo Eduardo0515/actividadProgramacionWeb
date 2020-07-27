@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Alumnos</title>
+  {{ style('materialize.min.css') }}
+</head>
+<body bgcolor="lightseagreen">
+    <nav class="light-blue teal lightseagreen" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container"  class="brand-logo">Alumnos</a>
+        </div>
+    </nav>
+    <br><br>
+<a class="btn-floating btn-large waves-effect waves-light #0091ea #ffa726 #ff5722 deep-orange" style="color:white" href="/alumnos/crear">Crear</a>
+<br>
+<br>
+    <div >
+        <table border=2>
+            <tr>
+                <th style="background-color:gray ;color:white">Nombre</th>  
+                <th style="background-color:gray  ;color:white">Apellido</th>
+                <th style="background-color:gray ;color:white">Fecha de nacimiento</th>
+                <th style="background-color:gray ;color:white">Domicilio</th>
+                <th style="background-color:gray ;color:white">Email</th>
+                <th style="background-color:gray ;color:white">Carrera</th>
+                <th style="background-color:gray ;color:white">Matricula</th>
+                <th style="background-color:gray ;color:white">Telefono</th>
+                <th style="background-color:gray ;color:white">Tipo de Sangre</th>
+                <th style="background-color:gray ;color:white"></th>
+                <th style="background-color:gray ;color:white"></th>
+                <th style="background-color:gray ;color:white"></th>
+            </tr>
+            @each(alumno in alumnos)
+                <tr>
+                    <td style="color:white">{{alumno.nombre}}</td>
+                    <td style="color:white">{{alumno.apellido}}</td>
+                    <td style="color:white">{{alumno.nacimiento}}</td>
+                    <td style="color:white">{{alumno.domicilio}}</td>
+                    <td style="color:white">{{alumno.email}}</td>
+                    <td style="color:white">{{alumno.carrera}}</td>
+                    <td style="color:white">{{alumno.matricula}}</td>
+                    <td style="color:white">{{alumno.telefono}}</td>
+                    <td style="color:white">{{alumno.tipoSangre}}</td>
+                    <td ><a style="color:white" href="/alumnos/editar/{{alumno.id}}">Editar</a></td>
+                    <td ><a style="color:white" href="/alumnos/eliminar/{{alumno.id}}">Eliminar</a></td>
+                    <td ><a style="color:white" href="/alumnos/ver/{{alumno.id}}">Ver</a></td>
+                </tr>
+            @endeach   
+        </table>
+    </div>
+   
+    <br><br><br><br><br><br><br>
+    <div style="margin-left:82%">
+        <a class="waves-effect waves-light btn" href="/"><h6 class="white-text">Regresar al inicio</h6></a>
+    </div>
+   
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  
+</head>
+<body >
+    <h1>Registro de calificaciones</h1>
+    <div>
+        <form action="/calificacions/crear"  method="post">
+            <label for="">Alumnos</label><br>
+            <select style="width:200px; height:25px;" name="idAlumno"/><br>
+            @each(registro in registros)
+                <option value={{registro.alumno.idAlumno}}>{{registro.alumno.nombre}}</option>  
+            @endeach
+            </select><br><br>
+            <label for="">Materias</label><br>
+            
+            <label style="color:black">Calificacion</label><br>
+                <input style="border-radius:10px;width:200px; border-color:blue;"type="number"
+                    name="calificacion"/><br><br>
+            <input type="submit" value="Crear">
+        </form>    
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registrar</title>
+  {{style('materialize.min.css')}}
+</head>
+<body bgcolor="lightseagreen">
+    <nav class="light-blue teal lightseagreen" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" class="brand-logo">Editar</a>
+        </div>
+    </nav>
+    <br><br>
+    <div style="margin-left:20px">
+        <form action="/registros/editar/{{registro.id}}"  method="post">
+          <label style="color:black"><strong>Alumnos</strong> </label>
+            <select class="browser-default" style="width: 180px; background-color:lightseagreen" name="idAlumno"/><br>
+            @each(alumno in alumnos)
+                <option value={{alumno.id}}>{{alumno.nombre}}</option>  
+              @endeach
+             
+            </select><br><br>
+          <label style="color:black"><strong> Materias</strong> </label>
+            <select class="browser-default" style="width: 180px; background-color:lightseagreen"  name="idMateria" id="">
+              @each(materia in materias)
+                <option value={{materia.id}} >{{materia.nombre}}</option>  
+              @endeach
+            </select>
+            <br>
+            <input style="background-color:;color:blue;border-radius:3px;margin-left:3%" type="submit" value="Editar">
+        </form>
+    </div>
+   
+</body>
+</html>

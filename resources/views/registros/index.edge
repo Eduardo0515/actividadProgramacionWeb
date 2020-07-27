@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registro</title>
+  {{ style('materialize.min.css') }}
+</head>
+<body bgcolor="lightseagreen">
+    <nav class="light-blue teal lightseagreen" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" class="brand-logo">Registros</a>
+        </div>
+    </nav>
+    <br><br>
+<a class="btn-floating btn-large waves-effect waves-light #0091ea #ffa726 #ff5722 deep-orange" style="color:white" href="/registros/crear">Crear</a>
+<br>
+<br>
+    <div >
+        <table border=2 id="table">
+            <tr>
+                <th style="background-color:gray">Id de Alumno</th>  
+                <th style="background-color:gray">Id de Materia</th>
+                <th style="background-color:gray">Nombre Alumno</th>  
+                <th style="background-color:gray">Nombre Materia</th>
+                <th style="background-color:gray"></th>
+                <th style="background-color:gray"></th>
+                <th style="background-color:gray"></th>
+            </tr>
+            @each(registro in registros)
+                <tr>
+                    <td style="color:white">{{registro.idAlumno}}</td>
+                    <td style="color:white" >{{registro.idMateria}}</td>
+                    <td style="color:white">{{registro.alumno.nombre}}</td>
+                    <td style="color:white">{{registro.materia.nombre}}</td>
+                    <td><a style="color:white" href="/registros/editar/{{registro.id}}">Editar</a></td>
+                    <td><a style="color:white" href="/registros/eliminar/{{registro.id}}">Eliminar</a></td>
+                    <td><a style="color:white" href="/registros/ver/{{registro.id}}">Ver</a></td>
+                </tr>
+                
+            @endeach   
+        </table>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+    <div style="margin-left:80%">
+        <a class="waves-effect waves-light btn" href="/"><h6 class="white-text">Regresar al inicio</h6></a>
+    </div>
+</body>
+</html>
